@@ -1,25 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import StudentList from './components/StudentList';
+import ClassInfo from './components/ClassInfo';
 
 function App() {
+  // When we need to store multiple instances of some data, store the data in an array. JSX elements can embed and render arrays of other JSX elements in a comma separated list. 
+  const studentData = [
+    {
+        id: 1,
+        nameData: 'Ada',
+        emailData: 'ada@dev.org'
+    },
+    {
+        id: 2,
+        nameData: 'Soo-ah',
+        emailData: 'sooah@dev.org'
+    },
+    {
+        id: 3,
+        nameData: 'Chrissy',
+        emailData: 'chrissy@dev.org'
+    }
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <h1>Attendance</h1>
+      <ClassInfo></ClassInfo>
+      <StudentList students={studentData}></StudentList>
+    </main>
   );
 }
 
 export default App;
+
